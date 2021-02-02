@@ -1,12 +1,9 @@
-import React from 'react';
-import { Layout } from 'antd';
-const { Header } = Layout;
+import React from 'react'
+import { Layout } from 'antd'
+const { Header } = Layout
 
-const THeader = () => {
-
-  return (
-    <Header className="site-layout-background" style={{ padding: 0 }} />
-  )
+const THeader = (): JSX.Element => {
+  return <Header className="site-layout-background" style={{ padding: 0 }} />
 }
 
 export default THeader

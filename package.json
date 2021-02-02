@@ -1,36 +1,42 @@
 {
-  "name": "cra-react-demo",
-  "version": "0.1.0",
+  "name": "fast-react-project",
+  "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --fix",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
-    "@craco/craco": "^6.0.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.14.2",
-    "@types/react-dom": "^16.9.8",
     "antd": "^4.10.2",
     "craco-antd": "^1.19.0",
     "dayjs": "^1.10.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.1.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.14.2",
+    "@types/react-dom": "^16.9.8",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "react-scripts": "4.0.1",
     "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
     ]
   },
   "browserslist": {
@@ -43,6 +49,18 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "npm run lint",
+      "npm run lint:fix",
+      "prettier --write"
     ]
   }
 }

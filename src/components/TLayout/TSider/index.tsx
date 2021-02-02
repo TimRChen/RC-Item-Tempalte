@@ -1,21 +1,21 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { Layout, Menu } from 'antd';
+import * as React from 'react'
+import { useState } from 'react'
+import { Layout, Menu } from 'antd'
 import {
   DesktopOutlined,
   PieChartOutlined,
   FileOutlined,
   TeamOutlined,
   UserOutlined,
-} from '@ant-design/icons';
-const { Sider } = Layout;
-const { SubMenu } = Menu;
+} from '@ant-design/icons'
+const { Sider } = Layout
+const { SubMenu } = Menu
 
-const TSider = () => {
-
+const TSider = (): JSX.Element => {
   const [collapsed, setCollapsed] = useState(false)
 
-  const onCollapse = (collapsed: React.SetStateAction<boolean>) => setCollapsed(collapsed);
+  const onCollapse = (collapsed: React.SetStateAction<boolean>) =>
+    setCollapsed(collapsed)
 
   return (
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>

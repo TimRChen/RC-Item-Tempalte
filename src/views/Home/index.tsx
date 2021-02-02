@@ -1,10 +1,9 @@
-import React from 'react';
-import { Layout } from 'antd';
+import React from 'react'
+import { Layout } from 'antd'
 import { TSider, THeader, TContent } from '../../components'
 import './index.less'
 
-const Home = () => {
-
+const Home = (): JSX.Element => {
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <TSider />
@@ -13,7 +12,7 @@ const Home = () => {
         <TContent />
       </Layout>
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home

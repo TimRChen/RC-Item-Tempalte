@@ -1,11 +1,11 @@
-import * as React from 'react';
-import './App.less';
+import * as React from 'react'
+import './App.less'
 import Home from './views/Home'
 
-function App() {
-  return (
-    <div className="App">{Home()}</div>
-  );
-}
+const App = (): JSX.Element => (
+  <div className="App">
+    <Home />
+  </div>
+)
 
-export default App;
+export default App
