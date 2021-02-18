@@ -7,8 +7,7 @@
     "build": "craco build",
     "build:preview": "dotenv -e .env.preview craco build",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --fix",
-    "eject": "react-scripts eject"
+    "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --fix"
   },
   "dependencies": {
     "antd": "^4.10.2",
@@ -22,6 +21,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.7",
     "craco-antd": "^1.19.0",
     "dotenv-cli": "^4.0.0",
     "dotenv-cra": "^2.0.2",

@@ -1,17 +1,21 @@
-import React from 'react'
-import { Layout } from 'antd'
-import { TSider, THeader, TContent } from '../../components'
+import * as React from 'react'
 import './index.less'
+import { Breadcrumb } from 'antd'
 
 const Home = (): JSX.Element => {
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <TSider />
-      <Layout className="site-layout">
-        <THeader />
-        <TContent />
-      </Layout>
-    </Layout>
+    <div>
+      <Breadcrumb>
+        <Breadcrumb.Item>User</Breadcrumb.Item>
+        <Breadcrumb.Item>Bill</Breadcrumb.Item>
+      </Breadcrumb>
+      <div
+        className="site-layout-background"
+        style={{ padding: 24, minHeight: 360 }}
+      >
+        home page.
+      </div>
+    </div>
   )
 }
 

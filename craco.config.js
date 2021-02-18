@@ -3,9 +3,17 @@
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin')
 const CracoAntDesignPlugin = require('craco-antd')
 require('dotenv-cra').config()
+const path = require('path')
+
+const pathResolve = (pathUrl) => path.join(__dirname, pathUrl)
 
 module.exports = {
   webpack: {
+    alias: {
+      '@': pathResolve('src'),
+      '@components': pathResolve('src/components'),
+      '@views': pathResolve('src/views'),
+    },
     plugins: [
       new SimpleProgressWebpackPlugin(), // 查看打包的进度
     ],

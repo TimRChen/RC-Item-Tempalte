@@ -2,7 +2,7 @@
 // Usage:
 // - import { DatePicker, Calendar } from 'antd';
 // - import format from 'moment';
-// + import { DatePicker, TimePicker, Calendar } from './components';
+// + import { DatePicker, TimePicker, Calendar } from '@/components';
 // + import format from 'dayjs';
 export { default as DatePicker } from './DatePicker'
 export { default as Calendar } from './Calendar'

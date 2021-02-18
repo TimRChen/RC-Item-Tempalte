@@ -1,17 +1,14 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
+import { routes } from '@/router'
 import { useState } from 'react'
 import { Layout, Menu } from 'antd'
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from '@ant-design/icons'
 const { Sider } = Layout
 const { SubMenu } = Menu
 
 const TSider = (): JSX.Element => {
+  const defaultSelectedKeys = ['0']
+
   const [collapsed, setCollapsed] = useState(false)
 
   const onCollapse = (collapsed: React.SetStateAction<boolean>) =>
@@ -20,25 +17,28 @@ const TSider = (): JSX.Element => {
   return (
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
       <div className="logo" />
-      <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-        <Menu.Item key="1" icon={<PieChartOutlined />}>
-          Option 1
-        </Menu.Item>
-        <Menu.Item key="2" icon={<DesktopOutlined />}>
-          Option 2
-        </Menu.Item>
-        <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-          <Menu.Item key="3">Tom</Menu.Item>
-          <Menu.Item key="4">Bill</Menu.Item>
-          <Menu.Item key="5">Alex</Menu.Item>
-        </SubMenu>
-        <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-          <Menu.Item key="6">Team 1</Menu.Item>
-          <Menu.Item key="8">Team 2</Menu.Item>
-        </SubMenu>
-        <Menu.Item key="9" icon={<FileOutlined />}>
-          Files
-        </Menu.Item>
+      <Menu
+        theme="dark"
+        mode="inline"
+        defaultSelectedKeys={defaultSelectedKeys}
+      >
+        {routes.map((route) => {
+          return !route.children ? (
+            <Menu.Item key={route.name} icon={<route.icon />}>
+              <Link to={route.path}>{route.name}</Link>
+            </Menu.Item>
+          ) : (
+            <SubMenu key={route.name} icon={<route.icon />} title="demo-list">
+              {route.children.map((childRoute) => (
+                <Menu.Item key={childRoute.name}>
+                  <Link to={`${route.path}${childRoute.path}`}>
+                    {childRoute.name}
+                  </Link>
+                </Menu.Item>
+              ))}
+            </SubMenu>
+          )
+        })}
       </Menu>
     </Sider>
   )
