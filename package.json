@@ -1,18 +1,17 @@
 {
   "name": "fast-react-project",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "build:preview": "dotenv -e .env.preview craco build",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --fix",
     "eject": "react-scripts eject"
   },
   "dependencies": {
     "antd": "^4.10.2",
-    "craco-antd": "^1.19.0",
     "dayjs": "^1.10.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -23,20 +22,21 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.8",
+    "craco-antd": "^1.19.0",
+    "dotenv-cli": "^4.0.0",
+    "dotenv-cra": "^2.0.2",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "react-scripts": "4.0.1",
-    "typescript": "^4.0.3",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "react-scripts": "4.0.1",
+    "simple-progress-webpack-plugin": "^1.1.2",
+    "typescript": "^4.0.3"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "plugin:@typescript-eslint/recommended",
-      "prettier/@typescript-eslint",
-      "plugin:prettier/recommended"
+    "ignorePatterns": [
+      "src/*"
     ]
   },
   "browserslist": {
