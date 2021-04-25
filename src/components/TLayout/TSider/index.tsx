@@ -7,7 +7,7 @@ const { Sider } = Layout
 const { SubMenu } = Menu
 
 const TSider = (): JSX.Element => {
-  const defaultSelectedKeys = ['0']
+  const defaultSelectedKeys = ['Home']
 
   const [collapsed, setCollapsed] = useState(false)
 

@@ -21,16 +21,14 @@ const TContent = (): JSX.Element => {
           } else {
             return (
               <Switch key={route.name}>
-                {route.children.map((childRoute) => {
-                  return (
-                    <Route
-                      key={childRoute.name}
-                      path={`${route.path}${childRoute.path}`}
-                      exact={childRoute.exact}
-                      children={<childRoute.main />}
-                    />
-                  )
-                })}
+                {route.children.map((childRoute) => (
+                  <Route
+                    key={childRoute.name}
+                    path={`${route.path}${childRoute.path}`}
+                    exact={childRoute.exact}
+                    children={<childRoute.main />}
+                  />
+                ))}
               </Switch>
             )
           }
