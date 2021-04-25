@@ -1,5 +1,5 @@
-# Fast React Business Template
-> author: J.D - <huangjd@fenbi.com>
+# Fast React Business Template
+> author: J.D - <timrchen@foxmail.com>
 
 > 技术栈：React LTS `New` + React Router + Redux? + Ant-Design `New` + SWR
 
